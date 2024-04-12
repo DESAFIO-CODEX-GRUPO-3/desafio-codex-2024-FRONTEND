@@ -1,0 +1,54 @@
+.input-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+input.ourInput {
+    background-color: #FAFAFA;
+    border: 1.5px solid rgba(0, 0, 0, 0.35);
+    padding-left: 14px;
+    border-radius: 10px;
+    width: 360px;
+    height: 54px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    outline: none;
+}
+
+input.ourLabel:focus {
+    border-color: rgba(0, 0, 0, 0.35);
+}
+
+label.ourLabel {
+    position: relative;
+    padding: 0.5 rem;
+    color: #25271E;
+    pointer-events: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    background-color: #FAFAFA;
+    padding: 6px;
+    height: fit-content;
+    width: fit-content;
+    margin-left: 20px;
+    top: 15px;
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label {
+  top: -1.5rem; /* Posiciona o rótulo acima da borda quando o input está focado ou tem conteúdo */
+  font-size: 0.8rem; /* Tamanho do rótulo quando posicionado acima */
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    display: none;
+}
+
+/* Para navegadores Firefox */
+input[type="number"]::-moz-inner-spin-button {
+    display: none;
+}

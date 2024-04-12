@@ -1,0 +1,14 @@
+.our-submit-button {
+    background-color: #25271E;
+    color: #fafafa;
+    border: none;
+    width: 360px;
+    height: 54px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 32px;
+    cursor: pointer;
+}
