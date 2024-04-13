@@ -1,0 +1,24 @@
+.soma-simbolo {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 50%; /* Para criar o círculo */
+    text-align: center;
+    line-height: 20px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.linha-horizontal {
+    border: none;
+    border-top: 1px solid #ccc; /* Estilo da linha horizontal */
+    margin-top: 10px; /* Espaçamento entre a linha e o botão */
+    margin-bottom: 10px; /* Espaçamento entre a linha e a lista de tarefas */
+}
+
+.tres-pontos {
+    float: right;
+    margin-left: 10px; /* Adicione margem à esquerda para separar os itens */
+    cursor: pointer; /* Adicione um cursor para indicar que é clicável */
+}
