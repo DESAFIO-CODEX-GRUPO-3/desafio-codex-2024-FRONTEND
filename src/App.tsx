@@ -9,9 +9,10 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Servico />} /> {/* Corrigindo o elemento para Servico */}
+        <Route path="/" element={<Home />} /> {/* Corrigindo o elemento para Servico */}
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/servico" element={<Servico />} />
         <Route path="*" element={<Home />} />
       </Routes>
     </BrowserRouter>

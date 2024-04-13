@@ -1,52 +1,71 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './styles.css';
+import Task from '../../components/Task';
+import TodoList from '../../components/TodoList';
+import plusButton from "../../assets/plus-button.svg";
+import plusButtonTDL from "../../assets/plus-button-tdl.svg";
+import downArrow from "../../assets/down-arrow.svg";
+import { JWTSECRET } from '../../constants/tokenSecret';
+import jwt from "jsonwebtoken";
 
-const ListaTarefas: React.FC<{ nome: string }> = ({ nome }) => {
+
+export default function Servico()  {
+    const userToken = localStorage.getItem("userToken");
+    const [email, setEmail] = useState("");
+    const [fullName, setFullName] = useState("");
+
+    // useEffect(() => {
+    //     jwt.verify(String(userToken), JWTSECRET, (error, decoded) => {
+    //         if (error) return;
+    //         if (decoded && decoded instanceof jwt.decode && decoded.email) {
+    //             setEmail(decoded.email);
+    //         }
+
+    //         if (decoded && decoded instanceof jwt.decode && decoded.fullName) {
+    //             setFullName(decoded.fullName);
+    //         }
+    //     });
+    // }, [userToken])
+
     return (
-        <div>
-            <h3>{nome}</h3>
-        </div>
-    );
-};
-
-const Servico: React.FC = () => {
-    const [listaSelecionada, setListaSelecionada] = useState<string | null>(null);
-
-    const criarNovaLista = () => {
-        // Lógica para criar uma nova lista de tarefas
-    };
-
-    const listasDeTarefas = ['Sem Título', 'Sem Título', 'Sem Título'];
-
-    return (
-	<div style={{ display: 'flex', minHeight: '100vh' }}>
-            <div style={{ width: '15%', backgroundColor: '#f0f0f0', padding: '20px' }}>
-                <div className="secao-titulo" style={{ marginBottom: '10px' }}> {/* Adicionando margem inferior */}
-                    <span className="titulo">Task de Usuário</span> {/* Nova linha "Task de Usuário" */}
-                    <span className="seta-baixo" style={{ float: 'right' }}>&#8964;</span> {/* Símbolo de "maior menor" virado para baixo */}
+        <div className='service-container'>
+            <aside>
+                <div className="secao-titulo">
+                    <div className='titulo-side-content'>
+                        <h3 className='user-initial'>U</h3>
+                        <h3 className="titulo">Task de Usuário</h3> 
+                    </div>
+                    <img src={downArrow} />
                 </div>
-		<span className="soma-simbolo">+</span>
-                <button onClick={criarNovaLista}>Nova Lista de Tarefas</button>
+                <button className='todo-list-button'>
+                    <img src={plusButtonTDL} alt="" />
+                    <h3>Nova Lista de Tarefas</h3>
+                </button>
                 <hr className="linha-horizontal" />
                 <ul>
-                    {listasDeTarefas.map((lista, index) => (
-                        <li key={index} onClick={() => setListaSelecionada(lista)} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-                            <span>{lista}</span>
-                            <span className="tres-pontos">&#8942;</span>
-                        </li>
-                    ))}
+                    <TodoList />
+                    <TodoList />
+                    <TodoList />
                 </ul>
-            </div>
-            <div style={{ flex: 1, padding: '20px' }}>
-                {listaSelecionada ? (
-                    <ListaTarefas nome={listaSelecionada} />
-                ) : (
-                    <p>Selecione uma lista de tarefas</p>
-                )}
-            </div>
+            </aside>
+            <main>
+                <div className='main-header'>
+                    <p className='p-title'>Sem Título</p>
+                    <p className='p-updated'>Última vez atualizado há x dias</p>
+                </div>
+                <div className='main-content'>
+                    <h1 className='todolist-title' >Sem Título</h1>
+                    <div className='task-list'>
+                        <Task />
+                        <Task />
+                        <Task />
+                    </div>
+                    <button className='new-task-button'>
+                        <img src={plusButton} />
+                        <p>Nova Tarefa</p>
+                    </button>
+                </div>
+            </main>
         </div>
     );
-};
-
-export default Servico;
-
+}

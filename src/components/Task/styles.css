@@ -1,0 +1,30 @@
+.task-container {
+    display: flex;
+    width: fit-content;
+    justify-content: space-between;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.task-side-content {
+    display: flex;
+    gap: 10px;
+    margin-right: 60px;
+}
+
+.dots {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.task-container:hover .dots {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.task-container p {
+    color: #25271e;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+}

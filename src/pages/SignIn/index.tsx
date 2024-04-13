@@ -23,7 +23,10 @@ export default function SignIn() {
 
         try {
             const response = await api.post('/user/login', data);
-            if (response.status === 200) setLogged(true);
+            if (response.status === 200) {
+                localStorage.setItem('userToken', response.data.token);
+                setLogged(true);
+            }
         } catch (error) {
             if (!(error instanceof Error)) return;
             if (isAxiosError(error) && error.response) {
@@ -37,7 +40,7 @@ export default function SignIn() {
 
     return(
         <div className='signup-page-container'>
-            {logged && (<Navigate to="/" replace={true} />)}
+            {logged && (<Navigate to="/servico" replace={true} />)}
             <aside>
                 <div className="asideHeader">
                 <Link to={"/"}>

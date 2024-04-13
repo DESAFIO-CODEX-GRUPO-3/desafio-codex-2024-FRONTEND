@@ -62,7 +62,7 @@ export default function SignUp() {
 
     return(
         <div className='signup-page-container'>
-            {registered && (<Navigate to="/" replace={true} />)}
+            {registered && (<Navigate to="/servico" replace={true} />)}
             <aside>
                 <div className="asideHeader">
                 <Link to={"/"}>
