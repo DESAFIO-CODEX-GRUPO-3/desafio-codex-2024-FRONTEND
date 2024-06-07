@@ -1,4 +1,23 @@
-# TASK
+<h1 align="center">
+<br>
+TASK
+</h1>
+
+<p align="center">Um projeto construído durante o desafio 02 do processo seletivo da CodexJR</p>
+
+<p align="center">
+  <a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License MIT">
+  </a>
+</p>
+
+<div align="center">
+  <img src="https://i.ibb.co/GJ6zkCj/task1.png" alt="Landing page" >
+  <img src="https://i.ibb.co/8dMcBXc/task2.png" alt="Tela de Login" >
+  <img src="https://i.ibb.co/y0q7MLS/task3.png" alt="Tela de Serviço do Task" >
+</div>
+
+<hr />
 
 ## Visão Geral
 
@@ -47,7 +66,7 @@ Contribuições são bem-vindas! Por favor, abra um pull request ou relate um pr
 
 ## Licença
 
-Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](./MIT) para mais detalhes.
+Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](https://opensource.org/licenses/MIT) para mais detalhes.
 
 ## Contato
 
